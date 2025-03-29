@@ -8,9 +8,14 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main', url: 'https://github.com/bhumisachdev12/devops-evaluation'
-                  bat 'npm install'
+                
             }
         }
+    stage('Install'){
+        steps{
+            bat 'npm install'
+}
+}
         
         stage('Build') {
             steps {
