@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git remote set-url origin 'https://github.com/bhumisachdev12/devops'
+                git branch: main , url: 'https://github.com/bhumisachdev12/devops'
             }
         }
         
