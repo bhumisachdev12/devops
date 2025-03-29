@@ -2,7 +2,7 @@ pipeline {
     agent any
     tools{
         nodejs 'Nodejs'
-    
+    }
     
     stages {
         stage('Checkout') {
@@ -34,7 +34,7 @@ pipeline {
                 echo 'Deploying the application...'
                   
                
-            }
+            
         }
     }
 }
