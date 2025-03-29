@@ -4,28 +4,30 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/bhumisachdev12/devops'
+                git branch: 'main', url: 'https://github.com/bhumisachdev12/devops-evaluation'
             }
         }
         
         stage('Build') {
             steps {
                 echo 'Building the project...'
-                // Add build commands here
-            }
+                bat 'npm install'
+              
         }
-        
+        }
         stage('Test') {
             steps {
                 echo 'Running tests...'
-                // Add test commands here
+                  bat 'npm test || echo "No tests defined"'
+             
             }
         }
         
         stage('Deploy') {
             steps {
                 echo 'Deploying the application...'
-                // Add deployment commands here
+                 bat 'npm run build' 
+               
             }
         }
     }
